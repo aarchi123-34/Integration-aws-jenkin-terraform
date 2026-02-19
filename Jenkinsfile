@@ -6,6 +6,12 @@ pipeline {
     }
 
     stages {
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Terraform') {
             steps {
                 withCredentials([usernamePassword(
